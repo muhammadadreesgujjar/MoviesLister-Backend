@@ -15,4 +15,4 @@ const permisionSchema = new mongoose.Schema({
 
 const Permision = mongoose.model("Permision", permisionSchema);
 
-module.exports = Permision
+module.exports = Permision;
