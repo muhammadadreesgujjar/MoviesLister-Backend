@@ -13,7 +13,7 @@ const movieSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    userName: { type: mongoose.SchemaTypes.ObjectId, ref: 'User' },
+    username: { type: mongoose.SchemaTypes.ObjectId, ref: 'User' },
 }, {
     timestamps: {
         createdAt: 'created_at',

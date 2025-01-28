@@ -11,11 +11,11 @@ const seedData = async () => {
         const findAdmin = findUsers.find(item => item.role.name == 'admin');
         if (findAdmin) return console.log("Admin already Exist : ", findAdmin);
         const addRole = await Role.findOne({ name: 'admin' });
-        await addRole.save({ timestamps: { createdAt: true, updatedAt: true } });
+        if (!addRole) return console.log("Admin role not found ");
         const createAdmin = new User({
-            userName: 'admin',
+            username: 'admin',
             email: 'admin@gmail.com',
-            password: 'admin123',
+            password: 'admin@123',
             role: addRole._id
         });
         await createAdmin.save({ timestamps: { createdAt: true, updatedAt: true } });
